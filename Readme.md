@@ -1,11 +1,11 @@
-### Hospitality ⛱
+### TLDR 
 
 
 > Hospitality is not to change people, but to offer them space where change can take place...
 
-**Henry Nouwen**
+> **Henry Nouwen**
 
-[TLDR](https://polmoneys.github.io/hospitality-react/).
+Interactive [demo](https://polmoneys.github.io/hospitality-react/).
 
 
 ### Getting started
@@ -26,7 +26,7 @@ The only dependency is ```<FocusScope/>``` from **react-aria** to improve focus 
 
 ### Documentation
 
-3 step process: define **visual** props, connect **callbacks** and provide **unavailable** spots.
+3 step process: define **visual** props, connect **callbacks** plus provide **unavailable** spots.
 
 Play with [examples](https://polmoneys.github.io/hospitality-react/) for an interactive demo of all **visual** props.
 
