@@ -1,5 +1,8 @@
-### TLDR 
 
+![hospitality-v1 0 0](https://user-images.githubusercontent.com/7026863/213932255-ebd19558-87b0-42e8-a375-66c6d350dbfe.gif)
+
+
+### TLDR 
 
 > Hospitality is not to change people, but to offer them space where change can take place.
 > **Henry Nouwen**
@@ -7,7 +10,7 @@
 Interactive [demo](https://polmoneys.github.io/hospitality-react/).
 
 
-### TLDR
+### Use
 
 
 ```bash
