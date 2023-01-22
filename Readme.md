@@ -1,10 +1,12 @@
 ### Hospitality ⛱
 
+
 > Hospitality is not to change people, but to offer them space where change can take place...
 
 **Henry Nouwen**
 
 [TLDR](https://polmoneys.github.io/hospitality-react/).
+
 
 ### Getting started
 
@@ -24,22 +26,9 @@ The only dependency is ```<FocusScope/>``` from **react-aria** to improve focus 
 
 ### Documentation
 
-3 step process: define visual props, connect callbacks and provide **unavailable** spots.
+3 step process: define **visual** props, connect **callbacks** and provide **unavailable** spots.
 
-#### Props
-
-Some **props** can't be used together, either you provide **map** or most of the other ones. 
-
-
-| Visual props       |     Notes    | 
-| :-------------- | :-----------: | 
-| rows        |    number     |   
-| columns       |    number     |   
-| rowShape           |     Array of numbers that add up to rows value   |   
-| initialRowIndex |    number, useful to chain multiple <Hospitality> instances     |      
-| spotComponent   | React element that will inherit some props |   
-| map    |      obj      |     
-
+Play with [examples](https://polmoneys.github.io/hospitality-react/) for an interactive demo of all **visual** props.
 
 
 | Callbacks props      |    Returns    |
@@ -58,7 +47,9 @@ Some **props** can't be used together, either you provide **map** or most of the
 
 #### Styles
 
+
 Powered by CSS grid, feel free to override default styles at your own risk using the following selectors:
+
 
 ```css
 
@@ -79,10 +70,11 @@ Powered by CSS grid, feel free to override default styles at your own risk using
 
 ```
 
-
 ### Roadmap 
 
+
 - [ ] provide alternative Spot designs 
+- [ ] publish useCamera demo 
 
 
 ### Feedback 
