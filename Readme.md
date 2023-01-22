@@ -1,14 +1,13 @@
 ### TLDR 
 
 
-> Hospitality is not to change people, but to offer them space where change can take place...
-
+> Hospitality is not to change people, but to offer them space where change can take place.
 > **Henry Nouwen**
 
 Interactive [demo](https://polmoneys.github.io/hospitality-react/).
 
 
-### Getting started
+### TLDR
 
 
 ```bash
@@ -24,7 +23,7 @@ Interactive [demo](https://polmoneys.github.io/hospitality-react/).
 The only dependency is ```<FocusScope/>``` from **react-aria** to improve focus management. 
 
 
-### Documentation
+### Get started
 
 3 step process: define **visual** props, connect **callbacks** plus provide **unavailable** spots.
 
