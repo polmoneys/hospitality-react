@@ -4,7 +4,7 @@
 
 **Henry Nouwen**
 
-[TLDR](https://polmoneys.github.io/boost/hospitality-react).
+[TLDR](https://polmoneys.github.io/hospitality-react/).
 
 ### Getting started
 
