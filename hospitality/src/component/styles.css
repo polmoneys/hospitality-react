@@ -1,0 +1,79 @@
+[hospitality-root] {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  width: fit-content;
+}
+
+[hospitality-root] [hospitality-row]:not(:last-of-type) {
+  margin-bottom: 0.6em;
+}
+
+[hospitality-root] [hospitality-row] {
+  gap: 0.8em;
+}
+
+[hospitality-root] [hospitality-spot] {
+  appearance: none;
+  touch-action: manipulation;
+  cursor: pointer;
+  overflow: visible;
+  width: 44px;
+  height: 44px;
+}
+[hospitality-root] [hospitality-spot^="default"] {
+  border-radius: 4px 4px 8px 8px;
+  background: #eebbc3;
+  background: linear-gradient(#eebbc3 0%, #eebbc3 70%, #000 70%, #cc1f2f 77%);
+  position: relative;
+  border: 1px solid #000;
+}
+
+[hospitality-root] [hospitality-spot^="default"]:after,
+[hospitality-root] [hospitality-spot^="default"]:before {
+  content: "";
+  display: block;
+  width: 7.33333px;
+  height: 24.44444px;
+  position: absolute;
+  background: #cc1f2f;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  bottom: 5.5px;
+}
+
+[hospitality-root] [hospitality-spot^="default"]:before {
+  left: -4.4px;
+}
+
+[hospitality-root] [hospitality-spot^="default"]:after {
+  right: -4.4px;
+}
+
+[hospitality-root] [hospitality-spot^="default"]:focus {
+  filter: brightness(1.2) !important;
+}
+
+[hospitality-root] [hospitality-spot$="busy"] {
+  cursor: not-allowed;
+  filter: brightness(0.7) grayscale(90%);
+}
+[hospitality-root] [hospitality-spot$="selected"] {
+  filter: brightness(2);
+}
+
+[hospitality-root] [hospitality-spot="empty"] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+[hospitality-root] [hospitality-spot-label="hidden"] {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}

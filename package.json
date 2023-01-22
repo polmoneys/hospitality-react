@@ -1,0 +1,10 @@
+{
+  "name": "hospitality-react",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "hospitality",
+      "demo"
+    ]
+  }
+}

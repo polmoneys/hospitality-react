@@ -1,0 +1,26 @@
+{
+  "name": "hospitality-react",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "files": [
+    "src/**/*"
+  ],
+  "scripts": {
+    "pack": "npm pack"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-aria": "^3.22.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@vitejs/plugin-react": "^1.3.0",
+    "json": "^11.0.0",
+    "typescript": "^4.6.3",
+    "vite": "^2.9.9",
+    "vite-plugin-dts": "^1.2.0",
+    "@tsconfig/recommended": "^1.0.2"
+  }
+}

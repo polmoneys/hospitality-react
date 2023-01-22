@@ -1,0 +1,33 @@
+[hospitality-spot-a] {
+  appearance: none;
+  touch-action: manipulation;
+  cursor: pointer;
+  overflow: visible;
+
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+[hospitality-spot-a]:focus {
+  outline: 2px solid currentColor;
+  outline-offset: 1px;
+}
+
+[hospitality-spot-a]:focus {
+  outline-color: magenta;
+}
+
+[hospitality-spot-a] svg {
+  fill: #9e9696;
+}
+[hospitality-spot-a].selected svg {
+  fill: magenta;
+}
+
+[hospitality-spot-a].busy svg {
+  fill: #9e9696;
+  opacity: 0.4;
+}
