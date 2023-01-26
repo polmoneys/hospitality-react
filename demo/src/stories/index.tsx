@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction } from "react";
 import { Hospitality, UnavailableSpots } from "hospitality-react";
 import { useControls, folder, button } from "leva";
 import { Variants } from "../App";
-import Cam from "./camera";
+// import Cam from "./camera";
 import Mapped from "./mapped";
 import Spot from "./spot";
 
@@ -15,7 +15,7 @@ interface Props {
 function Stories(props: Props) {
   const { setter } = props;
 
-  const { columns, rows, show, rowShape, unavailable } = useControls({
+  const { columns, rows, show, shape, unavailable } = useControls({
     basic: folder(
       {
         rows: 8,
@@ -23,14 +23,15 @@ function Stories(props: Props) {
       },
       { color: "yellow" }
     ),
-    show: { value: false, label: "customize row shape" },
+    show: { value: false, label: "customize shape" },
 
-    rowShape: folder(
+    shape: folder(
       {
-        rowShape: {
-          label: "sum of array must be === to rows",
+        shape: {
+          label: "sum of array must be === to columns",
           min: 1,
           max: 9,
+          step: 1,
           render: get => get("show"),
           value: [2, 4, 2],
         },
@@ -45,7 +46,7 @@ function Stories(props: Props) {
         unavailable: {
           label: "Disable spot on row 1",
           min: 1,
-          max: 9,
+          max: 8,
           value: 4,
           step: 1,
           optional: true,
@@ -72,7 +73,7 @@ function Stories(props: Props) {
         visual={{
           columns,
           rows,
-          ...(show && { rowShape }),
+          ...(show && { shape }),
         }}
         onSelect={spot => console.log({ spot })}
         unavailable={busySpots}
@@ -82,7 +83,7 @@ function Stories(props: Props) {
 }
 
 Stories.Map = Mapped;
-Stories.Camera = Cam;
+// Stories.Camera = Cam;
 Stories.Spot = Spot;
 
 export default Stories;
