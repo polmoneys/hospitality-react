@@ -30,10 +30,10 @@ The only dependency is ```<FocusScope/>``` from **react-aria** to improve focus 
 
 3 step process: define **visual** props, connect **callbacks** plus provide **unavailable** spots.
 
-Play with [examples](https://polmoneys.github.io/hospitality-react/) for an interactive demo of all **visual** props.
+Play with [examples](https://polmoneys.github.io/hospitality-react/) for an interactive demo of all **visual** props. As for data in/out two options:
 
 
-| Callbacks props      |    Returns    |
+| Callbacks props      |    Params    |
 | :-------------- | :-----------: | 
 | onSelect        |     Spots    |    
 | onSelectByRows       |     Record<number, Spots>      |    
@@ -41,7 +41,7 @@ Play with [examples](https://polmoneys.github.io/hospitality-react/) for an inte
 
 `<Hospitality>` Provides a render prop to affect internal state from the outside and/or display alternative visuals to log current selection. 
 
-| Available      |    Returns    |
+| Available      |    Params    |
 | :-------------- | :-----------: | 
 | onSelect        |     Spot     |    
 | selected       |     Spots      |    
