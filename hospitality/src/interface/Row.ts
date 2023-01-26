@@ -6,7 +6,7 @@ export default interface RowProps {
   wishlist: Spots;
   rowId: number;
   spots: Array<number>;
-  rowShape?: any;
+  shape?: Array<number>;
   slot?: ReactElement;
   unavailable?: Array<string>;
 }

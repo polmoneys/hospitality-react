@@ -8,7 +8,7 @@ import RowMap from "./RowMap";
 
 function Hospitality(props: HospitalityProps) {
   const {
-    visual: { rowShape, slot, map, initialRowIndex = 1, rows, columns },
+    visual: { shape, slot, map, initialRowIndex = 1, rows, columns },
     unavailable,
     onSelect,
     onSelectByRows,
@@ -100,7 +100,7 @@ function Hospitality(props: HospitalityProps) {
               rowId={rowIndex + initialRowIndex}
               spots={row}
               wishlist={wishlist}
-              rowShape={rowShape}
+              shape={shape}
               unavailable={unavailable}
               slot={slot}
             />

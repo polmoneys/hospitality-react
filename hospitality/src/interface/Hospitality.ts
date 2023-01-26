@@ -11,7 +11,7 @@ type VisualProps =
   | {
       rows: number;
       columns: number;
-      rowShape?: Array<number>;
+      shape?: Array<number>;
       map?: never;
       slot?: ReactElement;
       initialRowIndex?: number;
@@ -19,7 +19,7 @@ type VisualProps =
   | {
       rows?: never;
       columns?: never;
-      rowShape?: never;
+      shape?: never;
       map: MapProp;
       slot?: ReactElement;
       initialRowIndex?: number;

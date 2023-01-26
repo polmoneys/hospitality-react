@@ -6,39 +6,16 @@ export function makeBlueprint(width: number, height: number, val: number) {
 }
 
 export function makeRowShapeId(
-  rowShape: Array<number>,
+  shape: Array<number>,
   subRowIndex: number,
   spotIndex: number
 ) {
-  switch (subRowIndex) {
-    case 0:
-      return spotIndex;
-    // break;
-    case 1:
-      return `${rowShape[0] + spotIndex}`;
-    // break;
-    case 2:
-      return `${rowShape[0] + rowShape[1] + spotIndex}`;
-    // break;
-    case 3:
-      return `${rowShape[0] + rowShape[1] + rowShape[2] + spotIndex}`;
-    // break;
-    case 4:
-      return `${
-        rowShape[0] + rowShape[1] + rowShape[2] + rowShape[3] + spotIndex
-      }`;
-
-    // break;
-    default:
-      return `${
-        rowShape[0] +
-        rowShape[1] +
-        rowShape[2] +
-        rowShape[3] +
-        rowShape[4] +
-        spotIndex
-      }`;
-  }
+  if (subRowIndex === 0) return spotIndex;
+  return (
+    shape.slice(0, subRowIndex).reduce((prev, curr) => {
+      return prev + curr;
+    }, 0) + spotIndex
+  );
 }
 
 export type MapFunc<T = any> = (val: T, index?: number, arr?: T[]) => T;

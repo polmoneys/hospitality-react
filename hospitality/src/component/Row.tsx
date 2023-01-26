@@ -6,39 +6,40 @@ import { SpotStatus } from "../interface/Spot";
 import Spot from "./Spot";
 
 function Row(props: RowProps) {
-  const { onSelect, wishlist, rowId, spots, rowShape, slot, unavailable } =
-    props;
+  const { onSelect, wishlist, rowId, spots, shape, slot, unavailable } = props;
 
   const [blueprint, setBlueprint] = useState<Blueprint>([]);
 
   useEffect(() => {
-    if (!rowShape) return;
+    if (!shape) return;
 
-    const shapeCount = rowShape.reduce((a: number, b: number) => a + b, 0);
+    const shapeCount = shape.reduce((a: number, b: number) => a + b, 0);
 
     if (shapeCount !== spots.length) {
-      console.error("Check *shape* prop as makes no sense to me, bailing out");
+      console.error(
+        "the sum of *shape* is different than columns, adjust accordingly"
+      );
       return;
     }
 
-    const shaped = rowShape.map((val: number, position: number) => {
+    const shaped = shape.map((val: number, position: number) => {
       const start =
         position === 0
           ? 0
           : position === 1
-          ? rowShape[position - 1]
+          ? shape[position - 1]
           : shapeCount - val;
       const end =
         position === 0
           ? Number(val)
           : position === 1
-          ? rowShape[position - 1] + Number(val)
+          ? shape[position - 1] + Number(val)
           : shapeCount;
       return spots.slice(start, end);
     });
 
     setBlueprint(shaped);
-  }, [rowShape]);
+  }, [shape]);
 
   const rowStyles: Record<string, string> = useMemo(
     () => ({
@@ -54,7 +55,7 @@ function Row(props: RowProps) {
     return matches && matches.length > 0 ? true : false;
   };
 
-  if (!rowShape)
+  if (!shape)
     return (
       <div style={rowStyles} hospitality-row="">
         {spots.map((_, spotIndex: number) => {
@@ -92,11 +93,10 @@ function Row(props: RowProps) {
         blueprint?.map((subRow, subRowIndex: number) =>
           subRow.map((_: any, spotIndex: number) => {
             const spotId = `${rowId}-${makeRowShapeId(
-              rowShape,
+              shape,
               subRowIndex,
               spotIndex + 1
             )}`;
-
             const isFirst = spotIndex === 0;
             const isLast = blueprint.length === subRowIndex;
             const status = unavailable?.includes(spotId)
