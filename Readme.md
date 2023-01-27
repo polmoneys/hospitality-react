@@ -1,6 +1,5 @@
 
-![hospitality-v1 0 0](https://user-images.githubusercontent.com/7026863/213932255-ebd19558-87b0-42e8-a375-66c6d350dbfe.gif)
-
+<img width="1480" alt="Screenshot 2023-01-27 at 10 39 54" src="https://user-images.githubusercontent.com/7026863/215056582-4bf231d7-d2c2-4c44-8c46-9adcbd8dc571.png">
 
 ### TLDR 
 
@@ -69,6 +68,132 @@ Powered by CSS grid, feel free to override default styles at your own risk using
 
 [hospitality-spot="default selected"]{}
 
+
+```
+
+### Recipes
+
+**display a 6 column 3 rows 'map'**
+
+```tsx
+
+  <Hospitality
+        visual={{
+          columns:6,
+          rows:3,
+        }}
+      />
+
+```
+
+**add shape to 6 columns so them are grouped in pairs**
+
+```tsx
+
+  <Hospitality
+        visual={{
+          columns:6,
+          rows:3,
+          shape:[2,2,2]
+        }}
+      />
+
+```
+
+**chain components for more layout flexibility**
+
+```tsx
+
+  <Hospitality
+        visual={{
+          columns:6,
+          rows:6,
+        }}
+   />
+
+   <Hospitality
+      visual={{
+         columns:6,
+         rows:6,
+         // starts at row 7
+         initialRowIndex:7
+      }}
+   />
+
+```
+
+**unleash creativity with custom 'map'**
+
+
+```tsx
+
+import { MapProp } from "hospitality-react";
+
+  // Let's build a wedding ceremony layout where  0 === invisible spot
+const emptyGap: Array<0 | 1> = [0, 0, 0, 0];
+
+const emptyRow: Array<0 | 1> = [
+  ...emptyGap,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  ...emptyGap,
+];
+
+const mapWedding: MapProp = [
+// two '1' for bride and groom
+  [...emptyGap, 0, 0, 0, 1, 0, 1, 0, 0, 0, ...emptyGap],
+  emptyRow,
+  // '1's for guests, left for bride's right for groom's
+  [...emptyGap, 1, 1, 1, 0, 0, 0, 1, 1, 1, ...emptyGap],
+  [...emptyGap, 1, 1, 1, 0, 0, 0, 1, 1, 1, ...emptyGap],
+  [...emptyGap, 1, 1, 1, 0, 0, 0, 1, 1, 1, ...emptyGap],
+  emptyRow,
+  [...emptyGap, 1, 1, 1, 0, 0, 0, 1, 1, 1, ...emptyGap],
+  [...emptyGap, 1, 1, 1, 0, 0, 0, 1, 1, 1, ...emptyGap],
+  [...emptyGap, 1, 1, 1, 0, 0, 0, 1, 1, 1, ...emptyGap],
+];
+
+
+  <Hospitality
+        visual={{
+          map
+        }}
+      />
+
+```
+
+<img width="1480" alt="Screenshot component" src="https://user-images.githubusercontent.com/7026863/215056560-ad1083f6-5fa3-4877-8ea2-778401e74f5a.png">
+
+
+**Log user selection from the 'outside'**
+
+```tsx
+
+  <Hospitality
+        visual={{
+          columns:8,
+          rows:8,
+          shape:[2,4,2]
+        }}
+      >
+     {({ selected }) => (
+          <Fragment>
+            {selected?.map(item => (
+              <p key={`${item.row}-${item.spot}`}>
+                {item.row}-{item.spot}
+              </p>
+            ))}
+          </Fragment>
+        )} 
+   </Hospitality>
+        
 
 ```
 
