@@ -18,8 +18,20 @@ function Stories(props: Props) {
   const { columns, rows, show, shape, unavailable } = useControls({
     basic: folder(
       {
-        rows: 8,
-        columns: 8,
+        rows: {
+          label: "Rows (Y)",
+          min: 1,
+          max: 9,
+          step: 1,
+          value: 8,
+        },
+        columns: {
+          label: "Columns (X)",
+          min: 1,
+          max: 9,
+          step: 1,
+          value: 8,
+        },
       },
       { color: "yellow" }
     ),

@@ -1,9 +1,9 @@
-import { Hospitality } from "hospitality-react";
+import { Hospitality, MapProp } from "hospitality-react";
 import { useControls, buttonGroup, folder, button } from "leva";
 import { Dispatch, SetStateAction } from "react";
 import { busySpots } from ".";
 import { Variants } from "../App";
-import { mapPlatea, mapPyramid, mapTable } from "../maps";
+import { getMap } from "../maps";
 
 interface Props {
   setter: Dispatch<SetStateAction<Variants>>;
@@ -21,6 +21,7 @@ function Mapped(props: Props) {
           pyramid: () => set({ map: "pyramid" }),
           workshop: () => set({ map: "workshop" }),
           table: () => set({ map: "table" }),
+          wedding: () => set({ map: "wedding" }),
         }),
       },
       { color: "magenta" }
@@ -35,33 +36,16 @@ function Mapped(props: Props) {
     ),
   }));
 
-  const blueprint =
-    map === "workshop" ? mapPlatea : map === "table" ? mapTable : mapPyramid;
   return (
     <article>
       <Hospitality
         id="alpha"
         visual={{
-          map: blueprint,
+          map: getMap(map),
         }}
         unavailable={busySpots}
         onSelect={spot => console.log({ spot })}
       />
-      {/* {({ selected }) => (
-          <div
-            className="row-around align-center flex-stretch"
-            style={{ padding: "10vh 10vw" }}
-          >
-            {selected?.map(it => (
-              <p key={`${it.row}-${it.spot}`}>
-                {it.row}-{it.spot}
-              </p>
-            ))}
-          </div>
-        )} 
-      </Hospitality>
-        
-        */}
     </article>
   );
 }
