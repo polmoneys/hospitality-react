@@ -10,6 +10,7 @@
 
 [hospitality-root] [hospitality-row] {
   gap: 0.8em;
+  min-height: 44px;
 }
 
 [hospitality-root] [hospitality-spot] {

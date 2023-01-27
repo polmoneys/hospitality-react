@@ -1,4 +1,4 @@
-import { useEffect, useReducer, useRef } from "react";
+import { useEffect, useReducer } from "react";
 import { FocusScope } from "react-aria";
 import reducer, { ActionTypes } from "../reducer";
 import { groupBy, makeBlueprint } from "../reducer/utils";

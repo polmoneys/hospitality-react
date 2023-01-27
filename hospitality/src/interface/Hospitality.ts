@@ -5,7 +5,8 @@ interface RenderProp<TChildrenProps, TElement = any> {
   (props: TChildrenProps): ReactElement<TElement>;
 }
 
-export type MapProp = Array<Array<0 | 1>>;
+export type MapPropRow = Array<0 | 1>;
+export type MapProp = Array<MapPropRow>;
 
 type VisualProps =
   | {
