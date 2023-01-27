@@ -73,7 +73,7 @@ Powered by CSS grid, feel free to override default styles at your own risk using
 
 ### Recipes
 
-**display a 6 column 3 rows 'map'**
+How to display a **6 column 3 rows** 'map' ?
 
 ```tsx
 
@@ -86,7 +86,7 @@ Powered by CSS grid, feel free to override default styles at your own risk using
 
 ```
 
-**add shape to 6 columns so them are grouped in pairs**
+How to **shape** 6 columns in **pairs** ?
 
 ```tsx
 
@@ -100,7 +100,7 @@ Powered by CSS grid, feel free to override default styles at your own risk using
 
 ```
 
-**chain components for more layout flexibility**
+How to **chain** components ?
 
 ```tsx
 
@@ -122,7 +122,7 @@ Powered by CSS grid, feel free to override default styles at your own risk using
 
 ```
 
-**unleash creativity with custom 'map'**
+How to **draw** a 'map' ?
 
 
 ```tsx
@@ -172,7 +172,7 @@ const mapWedding: MapProp = [
 <img width="1480" alt="Screenshot component" src="https://user-images.githubusercontent.com/7026863/215056560-ad1083f6-5fa3-4877-8ea2-778401e74f5a.png">
 
 
-**Log user selection from the 'outside'**
+How to **log selection** from the  **'outside'** ?
 
 ```tsx
 
